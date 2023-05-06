@@ -13,18 +13,21 @@ jobs:
     name: "Linting the project"
     runs-on: ubuntu-latest
     steps:
-      - run: "echo About to run linting"
+      - name: "Running linting"
+        run: "echo About to run linting"
   build:
     needs: lint
     name: "Building the binaries"
     runs-on: ubuntu-latest
     steps:
-      - run: "echo About to build the project"
+      - name: "Building"
+        run: "echo About to build the project"
   test:
     needs: build
     name: "Testing the binaries"
     runs-on: ubuntu-latest
     steps:
-      - run: "echo Testing the binaries"
+      - name: "Testing"
+        run: "echo Testing the binaries"
     
       
