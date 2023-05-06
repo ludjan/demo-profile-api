@@ -8,4 +8,3 @@ Test this lil project
 ```shell
 javac *.java | java Application.java test
 ```
-
