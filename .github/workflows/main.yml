@@ -9,14 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    name: "Linting the project"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Running linting"
-        run: "echo About to run linting"
   linelint:
-    needs: lint
     runs-on: ubuntu-latest
     name: Check if all files end in newline
     steps:
@@ -26,12 +19,21 @@ jobs:
         uses: fernandrone/linelint@0.0.4
         id: linelint
   build:
-    needs: lint
+    needs: linelint
     name: "Building the binaries"
     runs-on: ubuntu-latest
     steps:
-      - name: "Building"
-        run: "echo About to build the project"
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.4
+        with:
+          # The Java version to make available on the path. Takes a whole or semver Java version, or 1.x syntax (e.g. 1.8 => Java 8.x). Early access versions can be specified in the form of e.g. 14-ea, 14.0.0-ea, or 14.0.0-ea.28
+          java-version: 1.8
+      - name: Checkout
+        uses: actions/checkout@v3.5.2
+      - name: Build
+        run: "javac *.java"
+      - name: Run test command
+        run: "java Application.java test"
   test:
     needs: build
     name: "Testing the binaries"
