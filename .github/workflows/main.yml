@@ -21,7 +21,7 @@ jobs:
     name: Check if all files end in newline
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.5.2
       - name: Linelint
         uses: fernandrone/linelint@0.0.4
         id: linelint
