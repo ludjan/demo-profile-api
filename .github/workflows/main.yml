@@ -20,25 +20,17 @@ jobs:
         id: linelint
   build:
     needs: linelint
-    name: "Building the binaries"
+    name: "Building and testing"
     runs-on: ubuntu-latest
     steps:
       - name: Setup Java JDK
         uses: actions/setup-java@v1.4.4
         with:
-          # The Java version to make available on the path. Takes a whole or semver Java version, or 1.x syntax (e.g. 1.8 => Java 8.x). Early access versions can be specified in the form of e.g. 14-ea, 14.0.0-ea, or 14.0.0-ea.28
           java-version: 19
       - name: Checkout
         uses: actions/checkout@v3.5.2
       - name: Build
         run: "javac *.java"
-      - name: Run test command
+      - name: Test
         run: "java Application.java test"
-  test:
-    needs: build
-    name: "Testing the binaries"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Testing"
-        run: "echo Testing the binaries"   
       
