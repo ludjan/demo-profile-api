@@ -1,0 +1,30 @@
+name: "Main"
+
+on: 
+  push: 
+    branches: [main]
+    paths-ignore: 
+      - "doc/**"
+      - ".github/**"
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: "Linting the project"
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo About to run linting"
+  build:
+    needs: lint
+    name: "Building the binaries"
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo About to build the project"
+  test:
+    needs: build
+    name: "Testing the binaries"
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo Testing the binaries"
+    
+      
