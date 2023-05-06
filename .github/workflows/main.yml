@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Linelint
-        uses: actions/linelint@master
+        uses: actions/linelint@0.0.6
         id: linelint
   build:
     needs: lint
@@ -38,6 +38,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Testing"
-        run: "echo Testing the binaries"
-    
+        run: "echo Testing the binaries"   
       
