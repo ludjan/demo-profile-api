@@ -17,5 +17,5 @@ jobs:
       - name: "Deploy to production"
         run: |
           "echo user=${{vars.USER}}"
-          "echo secret=${{secrets.USER_SECRET}}"
+          "echo secret=${{secrets.SECRET}}"
   
