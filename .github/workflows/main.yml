@@ -42,5 +42,5 @@ jobs:
     name: "Deploy to development"
     uses: ./.github/workflows/deploy.yml
     with:
-      environment: Development
+      environment: "Development"
     
