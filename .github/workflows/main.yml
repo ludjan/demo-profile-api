@@ -40,7 +40,7 @@ jobs:
   deploy:
     needs: build
     name: "Deploy to development"
-    uses: .github/workflows/deploy.yml@main
+    uses: ./.github/workflows/deploy.yml
     with:
       environment: Development
     
