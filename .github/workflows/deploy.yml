@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: "Deploy to production"
+    name: "Deploy to ${{ GITHUB.ENVIRONMENT }}"
     steps:
       - name: "Deploying"
         run: "echo Deployed to production"
