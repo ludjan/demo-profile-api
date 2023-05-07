@@ -14,8 +14,6 @@ jobs:
     environment: Production
     runs-on: ubuntu-latest
     steps:
-      - name: "Deploy to production"
-        run: |
-          "echo user=${{vars.USER}}"
-          "echo secret=${{secrets.SECRET}}"
+      - run: "echo user=${{vars.USER}}"
+      - run: "echo secret=${{secrets.SECRET}}"
   
