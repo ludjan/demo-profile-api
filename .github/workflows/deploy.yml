@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Deploy to production"
-        run: "echo user=${{ GITHUB.VARS.PROD_USER }}"
+        run: "echo user=$PROD_USER"
   
