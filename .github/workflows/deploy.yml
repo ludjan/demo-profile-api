@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Deploy to production"
-        run: "echo user=$PROD_USER"
+        run: "echo user=$USER"
   
