@@ -40,7 +40,7 @@ jobs:
   deploy:
     needs: build
     name: "Deploy to development"
-    uses: ./.github/workflows/deploy.yml
-    with:
-      environment: "Development"
-    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: "echo Deploying to development"
