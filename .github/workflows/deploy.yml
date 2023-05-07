@@ -4,16 +4,12 @@ on:
     inputs:
       environment:
         type: environment
-  workflow_call:
-    inputs:
-      environment:
-        type: string
     
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: "Deploy to ${{ github.event.inputs.environment }}"
-        run: "echo Deployed to ${{ github.event.inputs.environment }}"
+      - name: "Deploy to production"
+        run: "echo user=${{ GITHUB.VARS.PROD_USER }}"
   
