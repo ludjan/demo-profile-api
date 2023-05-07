@@ -1,0 +1,21 @@
+name: Deploy to Production
+on: 
+  workflow_dispatch:
+    
+jobs:
+  setup: 
+    name: Setup for deployment
+    runs-on: ubuntu-latest
+    steps: 
+      - run: "echo setup for deployment"
+  deploy:
+    needs: setup
+    name: Deploy
+    environment: Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Deploy to production"
+        run: |
+          "echo user=${{vars.USER}}"
+          "echo secret=${{secrets.USER_SECRET}}"
+  
