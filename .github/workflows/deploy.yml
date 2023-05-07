@@ -8,5 +8,5 @@ jobs:
     name: "Deploy to production"
     steps:
       - name: "Deploying"
-      - run: "echo Deployed to production"
+        run: "echo Deployed to production"
   
