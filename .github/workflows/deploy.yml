@@ -4,6 +4,10 @@ on:
     inputs:
       environment:
         type: environment
+  workflow_call:
+    inputs:
+      environment:
+        type: string
     
 jobs:
   deploy:
