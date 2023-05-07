@@ -33,4 +33,9 @@ jobs:
         run: "javac *.java"
       - name: Test
         run: "java Application.java test"
-      
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Deploy
+        run: "echo Deployed to remote server"
