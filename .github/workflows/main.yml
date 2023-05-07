@@ -37,3 +37,10 @@ jobs:
         run: "javac *.java"
       - name: Test
         run: "java Application.java test"
+  deploy:
+    needs: build
+    name: "Deploy to development"
+    uses: .github/workflows/deploy.yml@main
+    with:
+      environment: Development
+    
