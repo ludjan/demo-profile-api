@@ -2,9 +2,13 @@ name: "Main"
 
 on: 
   push: 
-    branches: [main]
+    branches: [main] # something is pushed directly to the main branch
     paths-ignore: 
       - "doc/**"
+      - ".github/**"
+  pull_request:
+    branches: [main] # main branch is targeted by a pull request
+    paths-ignore:
       - ".github/**"
   workflow_dispatch:
 
@@ -33,9 +37,3 @@ jobs:
         run: "javac *.java"
       - name: Test
         run: "java Application.java test"
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Deploy
-        run: "echo Deployed to remote server"
