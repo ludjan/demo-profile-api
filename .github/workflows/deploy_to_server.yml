@@ -12,7 +12,7 @@ jobs:
       - name: SFTP uploader
         uses: wangyucode/sftp-upload-action@v2.0.2
         with:
-          host: 'sftp.block15.dreamhost.com'
+          host: 'sftp://block15.dreamhost.com'
           username: 'dh_pc4gaj'
           password: ${{ secrets.SERVER_PASSWORD }}
           localDir: '.'
