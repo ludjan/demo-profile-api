@@ -15,6 +15,6 @@ jobs:
           host: 'sftp.block15.dreamhost.com'
           user: 'user'
           password: 'password'
-          localDir: ''
-          remoteDir: 'ludjan.com'
+          localDir: '.'
+          remoteDir: '/ludjan.com'
 
