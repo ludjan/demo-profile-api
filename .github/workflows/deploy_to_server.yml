@@ -16,5 +16,5 @@ jobs:
           username: 'dh_pc4gaj'
           password: ${{ secrets.SERVER_PASSWORD }}
           localDir: '.'
-          remoteDir: '/home/dh_pc4gaj/ludjan.com'
+          remoteDir: '/home/dh_pc4gaj/ludjan.com/stupid'
 
