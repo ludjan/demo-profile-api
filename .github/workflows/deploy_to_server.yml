@@ -13,8 +13,8 @@ jobs:
         uses: wangyucode/sftp-upload-action@v2.0.2
         with:
           host: 'sftp.block15.dreamhost.com'
-          user: 'user'
-          password: 'password'
+          username: 'dh_pc4gaj'
+          password: ${{ secrets.SERVER_PASSWORD }}
           localDir: '.'
-          remoteDir: '/ludjan.com'
+          remoteDir: '/home/dh_pc4gaj/ludjan.com'
 
