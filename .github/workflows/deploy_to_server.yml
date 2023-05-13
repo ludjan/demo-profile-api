@@ -17,7 +17,7 @@ jobs:
           # SFTP on
           sftp: true
           # FTP host URL like: ftp.host.com or sftp.host.com
-          host: "sftp://block15.dreamhost.com"
+          host: block15.dreamhost.com
           # FTP port
           # port: # optional, default is 21
           # Ftp username
